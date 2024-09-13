@@ -1,0 +1,5 @@
+@font-face{
+    font-family: "SUSE", sans-serif;
+    src: local("SUSE-Regular"),
+    url("./font/SUSE-Regular.ttf") format("truetype");
+}

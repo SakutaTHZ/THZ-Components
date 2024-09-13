@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "SUSE", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow:hidden;
+  overflow-y:scroll;
+}
+
+#root,
+.mainSection {
+  width: 100dvw;
+  min-height: 100dvh;
+  z-index:-2;
+    --s: 100px; /* control the size*/
+    --c1: #121212;
+    --c2: #171717;
+    
+    --_g: #0000 24%,
+      var(--c2) 26% 34%,var(--c1) 36% 44%,
+      var(--c2) 46% 54%,var(--c1) 56% 64%,
+      var(--c2) 66% 74%,#0000 76%;
+    background:
+      radial-gradient(100% 100% at 100% 0,var(--_g)),
+      radial-gradient(100% 100% at 0 100%,var(--_g)),
+      radial-gradient(var(--c2) 14%,var(--c1) 16%) 
+       calc(var(--s)/2) calc(var(--s)/2);
+    background-size: var(--s) var(--s);
+}
+
+.componentBox{
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:4px;
+}
+
+.sideNav{
+  background:linear-gradient(#00000080,transparent);
+  box-shadow:0 0 10px rgba(0,0,0,0.2),0 0 20px rgba(0,0,0,0.2),0 0 40px rgba(0,0,0,0.2),0 0 80px rgba(0,0,0,0.2);
+  z-index:100;
+  width:250px; 
+  transition: 1s cubic-bezier(0.375, 0.885, 0.32, 1.275);
+  transform:translateX(250px);
+  img{
+    transform:translateX(-50px);
+    transition: 1.5s cubic-bezier(0.375, 0.885, 0.32, 1.275);
+  }
+}
+.sideNav.open{
+  transform:translateX(0px);
+  img{
+    transform:translateX(0px);
+  }
+}
+
+/* width */
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.custom-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* For small mobile devices (portrait and landscape) */
+@media screen and (max-width: 480px) {
+  .sideNav.open{
+    width:100dvw;
+  }
+}
+
+/* For larger mobile devices and tablets (portrait) */
+@media screen and (max-width: 768px) {
+}
